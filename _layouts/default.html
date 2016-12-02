@@ -1,0 +1,138 @@
+{% capture locale %}{{ page.url | truncate: 3, "" | remove: "/" }}{% endcapture %}
+<!DOCTYPE HTML>
+<!--
+	Big Picture by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="{{ locale }}">
+	<head>
+		<title>{{ page.title }}</title>
+		<meta charset="utf-8" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="{{ page.title }}" />
+		<meta property="og:url" content="http://beforeimetyoufilm.com/{{ page.url }}" />
+		<meta property="og:description" content="It is supposed to be the happiest day of a woman’s life. In Slovakian hospitals, however, the joy of motherhood can easily turn into a nightmare." />
+		<meta property="og:image" content="http://beforeimetyoufilm.com/images/intro.jpg" />
+		<meta property="og:image:width" content="1278" />
+		<meta property="og:image:height" content="720" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="The documentary 'Before I Met You' by Zuzana Límová provides an intimate look at what goes on behind the closed doors of delivery rooms, where nobody but mothers-to-be are allowed to enter.">
+		<!--[if lte IE 8]><script src="/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="/css/ie9.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+
+				<!-- Logo -->
+					<h1 id="logo"><a href="/{{ locale }}/">{{ page.h1 }}</a></h1>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							{% if locale == "en" %}
+							<li class="submenu">
+								<a href="#about">About</a>
+								<ul>
+									<li><a href="/{{ locale }}/about/#synopsis">Synopsis</a></li>
+									<li><a href="/{{ locale }}/about/#filmmakers">Filmmakers</a></li>
+									<li><a href="/{{ locale }}/about/#credits">Credits</a></li>
+								</ul>
+							</li>
+							<li><a href="/{{ locale }}/#videos">Gallery</a></li>
+<!-- 							<li class="submenu"><a href="/{{ locale }}/learn">Learn</a>
+								<ul>
+									<li><a href="/{{ locale }}/learn/#birth">Birth and trauma</a></li>
+									<li><a href="/{{ locale }}/learn/#experts">What experts say</a></li>
+									<li><a href="/{{ locale }}/learn/#support">Look for support</a></li>
+								</ul>
+							</li> -->
+							<li class="submenu"><a href="#">Press</a>
+								<ul>
+									<li><a href="/data/Before I Met You_FilmDataSheet.pdf">Download the presskit</a></li>
+									<li><a href="/data/Before I Met You_poster_en.pdf">Download the poster</a></li>
+								</ul>
+							</li>
+							<li><a href="/{{ locale }}/contact">Contact</a></li>
+							<li class="icons"><a href="https://www.facebook.com/BeforeIMetYouFilm/" class="fb icon fa-facebook-square"><span class="label">Facebook</span></a></li>
+							<!-- <li class="icons"><a class="sk" href="/sk/" title="Slovensky"></a></li> -->
+							{% else %}
+							<li><a href="/{{ locale }}/#intro">Intro</a></li>
+							<li><a href="/{{ locale }}/#about">O Filme</a></li>
+							<li><a href="/{{ locale }}/#videos">Videa</a></li>
+							<li><a href="/{{ locale }}/#press">Tlač</a></li>
+							<li><a href="/{{ locale }}/contact">Kontakty</a></li>
+							<li class="icons"><a href="https://www.facebook.com/BeforeIMetYouFilm/" class="fb icon fa-facebook-square"><span class="label">Facebook</span></a></li>
+							<li class="icons"><a class="en" href="/en/" title="English"></a></li>
+							{% endif %}
+						</ul>
+					</nav>
+
+			</header>
+
+		{{ content }}
+
+		<!-- Footer -->
+			<footer id="footer">
+				<p class="actions">Produced by <a href="http://www.zeligfilm.it"><img src="/images/logos/ZeLIG.png" title="ZeLIG - School for Documentary, Television and New Media" alt="" height="39px" /></a>, with the financial support from&nbsp;<a href="http://www.bls.info"><img src="/images/logos/bls.png" title="Business Location Südtirol · Alto Adige" alt="" height="39px" /></a>&nbsp;&nbsp;<a href="http://www.provincia.bz.it"><img src="/images/logos/prov.png" title="Provincia autonoma di Bolzano - Alto Adige" alt="" height="39px" /></a></p>
+
+				<!-- Menu -->
+					<ul class="menu">
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</footer>
+
+		<!-- Scripts -->
+			<script src="/js/jquery.min.js"></script>
+			<script src="/js/jquery.poptrox.min.js"></script>
+			<script src="/js/jquery.scrolly.min.js"></script>
+			<script src="/js/jquery.scrollex.min.js"></script>
+			<script src="/js/jquery.dropotron.min.js"></script>
+			<script src="/js/skel.min.js"></script>
+			<script src="/js/util.js"></script>
+			<!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->
+			<script src="/js/main.js"></script>
+
+		<script>
+			$(function() {
+				
+				// Note: make sure you call dropotron on the top level <ul>
+				$('#nav > ul').dropotron({ 
+					offsetY: -10 // Nudge up submenus by 10px to account for padding
+				});
+			
+				$( "#credits button" ).click(function() {
+				  $("#credits-detail").toggle( "slow" );
+
+				  if ($(this).text() == "See all") {
+				  	$(this).text("See less")
+				  } else {
+				  	$(this).text("See all")
+				  }
+				});
+
+				$( "button.readmore").click(function() {
+					$("#" + $(this).data("id")).show("slow");
+					$(this).hide();
+				});
+			});
+		</script>
+
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-87666679-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+
+	</body>
+</html>
