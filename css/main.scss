@@ -149,6 +149,10 @@ div.buttons a:last-child:before {
 	margin-right: 10px;
 }
 
+#contact dl {
+	width: 600px;
+}
+
 #contact .placeholder {
 	display: inline-block;
 	width: 31px;
@@ -200,7 +204,9 @@ section#crew article {
 
 /* Only applies to top level ("level-0") menus */
 .dropotron.level-0 { margin-top: 1.25em; }
-.dropotron.level-0:before { content: ''; position: absolute; border-bottom: solid 0.5em #39454b; border-left: solid 0.5em transparent; border-right: solid 0.5em transparent; top: -0.5em; }
+
+/* zobacik
+.dropotron.level-0:before { content: ''; position: absolute; border-bottom: solid 0.5em #39454b; border-left: solid 0.5em transparent; border-right: solid 0.5em transparent; top: -0.5em; } */
 
 
 /* Intro */
