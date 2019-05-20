@@ -27,7 +27,12 @@
 
 	@include skel-layout((
 		reset: 'full',
-		boxModel: 'border'
+		boxModel: 'border',
+		grid: true,
+		breakpoints: (
+			large: ( grid: ( gutters: 34px )),
+			medium: ( grid: ( gutters: 2px )),
+		)
 	));
 
 // Base.
@@ -93,6 +98,18 @@ div.content p a {
 	font: normal normal normal 14px/1 FontAwesome;
 	content: "\f107";
 }
+
+section#intro div.content div.row div#vimeo a:after{
+	padding-left: 4px;
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f27d";
+}
+
+/*section#intro div.content div.row div#patreon a:after{
+	padding-left: 4px;
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f3d9";
+}*/
 
 div.buttons {
 	position: relative;
@@ -178,6 +195,10 @@ section#crew article {
 	margin-bottom: 1em;
 }
 
+section#intro a.button {
+	margin-top: 1em;
+}
+
 .videoWrapper {
 	position: relative;
 	padding-bottom: 56.25%; /* 16:9 */
@@ -235,4 +256,34 @@ section#crew article {
 		background-size: cover;
 		background-attachment: fixed;
 		background-position: center center;
+	}
+
+/* Contact */
+
+	#contact {
+		overflow: hidden;
+		padding-bottom: 0;
+		/*background: url("images/overlay.png"), url("../../images/intro.jpg");
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;*/
+	}
+
+	#contact .box {
+		-moz-transition: -moz-transform 1s ease;
+		-webkit-transition: -webkit-transform 1s ease;
+		-ms-transition: -ms-transform 1s ease;
+		transition: transform 1s ease;
+		-moz-transform: translateY(0);
+		-webkit-transform: translateY(0);
+		-ms-transform: translateY(0);
+		transform: translateY(0);
+		position: relative;
+	}
+
+	#contact.inactive .box {
+		-moz-transform: translateY(100%);
+		-webkit-transform: translateY(100%);
+		-ms-transform: translateY(100%);
+		transform: translateY(100%);
 	}
